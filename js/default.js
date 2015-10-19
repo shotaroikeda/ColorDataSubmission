@@ -50,6 +50,10 @@ app.config(['$routeProvider',
                         templateUrl: 'index.html',
                         controller: 'formCtrl'
                     }).
+		    when('/end', {
+			templateUrl: 'end.html',
+			controller: 'endFormCtrl'
+		    }).
                     otherwise({
                         redirectTo: '/'
                     });
@@ -93,6 +97,10 @@ app.controller('formCtrl', ['$scope', function($scope)
 					write_to_bad(q_result_arr[i+3]);
 					write_to_good(q_result_arr[i]);
 				    }
+				    window.location.replace("end");
 				}
 
                             }]);
+
+app.controller('endFormCtrl', ['$scope', function($scope){
+}]);
