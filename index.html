@@ -43,6 +43,9 @@
         <!-- Put an example here! -->
       </div>
       <br />
+    </div>
+    <div class="container actual-form">
+      <br />
       <div ng-repeat="i in q_colors">
         <div class="question-wrapper">
           <span class="col-xs-1">Q.{{ $index + 1}}</span>
@@ -50,10 +53,10 @@
           </div>
           <div class="answer col-xs-8">
             <span>What color is this?</span>
-            <span ng-if="$index < 3" class="q_detail">(Pick the color you think it is)</span>
-            <span ng-if="$index >= 3" class ="q_detail">(Pick the wrong color)</span>
+            <span ng-if="$index < 3" class="q_detail_r">(Pick the color you think it is)</span>
+            <span ng-if="$index >= 3" class ="q_detail_w">(Pick the wrong color)</span>
 
-	    <br />
+            <br />
             <div class="btn-group" ng-click="log_obj($index, radioModel)">
               <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'RED'">Red</label>
               <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'PINK'">Pink</label>

@@ -17,6 +17,7 @@ body
 {
     border-radius: 10px;
     background-color: white;
+    margin-bottom: 20px;
 }
 
 #desc
@@ -39,13 +40,16 @@ body
     border-width: 5px;
 }
 
-.answer
-{
-}
-
-.q_detail
+.q_detail_r
 {
     font-weight: 700;
+    color: purple;
+}
+
+.q_detail_w
+{
+    font-weight: 700;
+    color: red;
 }
 
 .btn-group
