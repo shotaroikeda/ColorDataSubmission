@@ -1,0 +1,84 @@
+<html>
+  <!-- Latest compiled and minified CSS -- Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- JQuery Min -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <!-- JQuery UI -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+
+  <!-- ngRoute -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+
+  <!-- UI Bootstrap -->
+  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.2.js"></script>
+
+  <!-- Firebase -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+
+  <head>
+    <title>Hex to Color Data Submission</title>
+  </head>
+  <body ng-app="colorDataApp" ng-controller="formCtrl">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <span class="navbar-text white-out">Hex to Color Data Set Creator</span>
+      </div>
+    </nav>
+
+    <div class="container actual-form">
+      <div id="desc">
+        <h1>Hex Number to Color Data Collection</h1>
+        <p>First and foremost, thank you for participating! In here, all I want you to do is to select the text which corresponds the closest with the color displayed. It would be awesome if you can run though this more than once, but it's not necessary</p>
+        <h2> Instructions for Q1 - Q3</h2>
+        <p>Pick the one that matches the color.</p>
+        <!-- Put an example here! -->
+        <h2> Instructions for Q4 - Q6</h2>
+        <p>Pick the one that <strong>DOES NOT</strong> match the color.</p>
+        <!-- Put an example here! -->
+      </div>
+      <br />
+      <div ng-repeat="i in q_colors">
+        <div class="question-wrapper">
+          <span class="col-xs-1">Q.{{ $index + 1}}</span>
+          <div class="question col-xs-3" style="background-color: {{ i }}">
+          </div>
+          <div class="answer col-xs-8">
+            <span>What color is this?</span>
+            <span ng-if="$index < 3" class="q_detail">(Pick the color you think it is)</span>
+            <span ng-if="$index >= 3" class ="q_detail">(Pick the wrong color)</span>
+
+	    <br />
+            <div class="btn-group" ng-click="log_obj($index, radioModel)">
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'RED'">Red</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'PINK'">Pink</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'ORANGE'">Orange</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'YELLOW'">Yellow</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'GREEN'">Green</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'BLUE'">Blue</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'PURPLE'">Purple</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'BROWN'">Brown</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'WHITE'">White</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'BLACK'">Black</label>
+              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'GREY'">Grey</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-danger btn-block" ng-click="submit_and_check()">Submit</button>
+    </div>
+  </body>
+
+
+  <!-- custom CSS -->
+  <link rel="stylesheet" href="css/default.css"></link>
+
+  <!-- custom Javascript -->
+  <script src="js/default.js"></script>
+
+</html>
